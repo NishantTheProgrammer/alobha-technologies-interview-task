@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 const apiBaseURL = 'http://192.168.9.120:8000/api/'; // this can we get from environment... just here like that because dummy task
 
 export interface User {
-  id: string,
+  _id: string,
   name: string,
   email: string,
   phone_number: string, // because user can also put dash or plus symbols, alternatively we can validate

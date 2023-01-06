@@ -1,26 +1,27 @@
-
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Number</th>
-        <th>Date of birth</th>
-    </tr>
-    <tr>
-        <th></th>
-        <th><input type="text" placeholder="Search Name"></th>
-        <th><input type="text" placeholder="Search Email"></th>
-        <th><input type="text" placeholder="Search Number"></th>
-        <th><input type="text" placeholder="Search Date of birth"></th>
-    </tr>
-    <tr *ngFor="let user of users">
-        <td>1</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.phone_number }}</td>
-        <td>{{ user.date_of_birth }}</td>
-    </tr>
-</table>
+<form [formGroup]="filterForm">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th (click)="sort('name')"> Name</th>
+            <th (click)="sort('email')"> Email</th>
+            <th (click)="sort('phone_number')"> Number</th>
+            <th> Date of birth</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><input type="text" formControlName="name" placeholder="Search Name"></th>
+            <th><input type="text" formControlName="email" placeholder="Search Email"></th>
+            <th><input type="text" formControlName="phone_number" placeholder="Search Number"></th>
+            <th><input type="text" placeholder="Search Date of birth"></th>
+        </tr>
+        <tr *ngFor="let user of filterdUsers">
+            <td>{{ user._id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone_number }}</td>
+            <td>{{ user.date_of_birth }}</td>
+        </tr>
+    </table>
+</form>
 
 <router-outlet></router-outlet>

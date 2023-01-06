@@ -6,6 +6,8 @@ table {
     tr {
         &:first-child {
             background-color: rgb(212, 231, 255);
+            cursor: pointer;
+            user-select: none;
         }
 
         th {
@@ -14,6 +16,10 @@ table {
             input {
                 padding: 5px;
             }
+        }
+
+        td {
+            padding: 10px;
         }
     }
 }

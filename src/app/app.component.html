@@ -1,4 +1,26 @@
 
-<p>App</p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Number</th>
+        <th>Date of birth</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th><input type="text" placeholder="Search Name"></th>
+        <th><input type="text" placeholder="Search Email"></th>
+        <th><input type="text" placeholder="Search Number"></th>
+        <th><input type="text" placeholder="Search Date of birth"></th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>1</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone_number }}</td>
+        <td>{{ user.date_of_birth }}</td>
+    </tr>
+</table>
 
 <router-outlet></router-outlet>
